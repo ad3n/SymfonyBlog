@@ -34,6 +34,8 @@
 
 - Fix bug (missing) pagination link in list tamplate (`list.html.twig`)
 
-## Prepare Validation ()
+## Prepare Validation ([871355a](https://github.com/ad3n/SymfonyBlog/commit/871355a5e142ddcf2db6f7f5c9bca61cce54dcbc))
 
 - `composer req validation`
+
+## Add Unique Name Validation ([efe2a6c](https://github.com/ad3n/SymfonyBlog/commit/efe2a6c7a9e4680c19d78ac35fb198b293ce1858))
