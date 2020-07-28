@@ -45,3 +45,5 @@
 - repo: [https://github.com/omines/datatables-bundle](https://github.com/omines/datatables-bundle)
 
 - `composer require omines/datatables-bundle asset`
+
+## Add List Datatables ([8e06ba3](https://github.com/ad3n/SymfonyBlog/commit/8e06ba335034fe91981104e89728a5471472e78b))
