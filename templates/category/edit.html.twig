@@ -1,5 +1,2 @@
-<form method="post" action="{{ path('app_category_edit', {id: id}) }}">
-    <input type="text" name="name" value="{{ category.name }}">
-    <button type="submit">Save</button>
-</form>
+{{ form(form) }}
 <p><a href="{{ path('app_category_index') }}">List</a></p>

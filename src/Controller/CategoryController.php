@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,9 +27,10 @@ class CategoryController extends AbstractController
      */
     public function add(Request $request, UrlGeneratorInterface $urlGenerator, EntityManagerInterface $manager)
     {
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
         if ($request->isMethod(Request::METHOD_POST)) {
-            $category = new Category();
-            $category->setName($request->get('name'));
+            $form->handleRequest($request);
 
             $manager->persist($category);
             $manager->flush();
@@ -38,7 +40,7 @@ class CategoryController extends AbstractController
             return new RedirectResponse($urlGenerator->generate('app_category_index'));
         }
 
-        return $this->render('category/add.html.twig');
+        return $this->render('category/add.html.twig', ['form' => $form->createView()]);
     }
 
     /**
@@ -51,8 +53,9 @@ class CategoryController extends AbstractController
             $this->addFlash('error', 'Category not found');
         }
 
+        $form = $this->createForm(CategoryType::class, $category);
         if ($category && $request->isMethod(Request::METHOD_POST)) {
-            $category->setName($request->get('name'));
+            $form->handleRequest($request);
 
             $manager->persist($category);
             $manager->flush();
@@ -62,7 +65,7 @@ class CategoryController extends AbstractController
             return new RedirectResponse($urlGenerator->generate('app_category_index'));
         }
 
-        return $this->render('category/edit.html.twig', ['id' => $id, 'category' => $category]);
+        return $this->render('category/edit.html.twig', ['id' => $id, 'form' => $form->createView()]);
     }
 
     /**

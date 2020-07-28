@@ -29,3 +29,7 @@
 ## Prepare Form ([91a87b1](https://github.com/ad3n/SymfonyBlog/commit/91a87b1ba66793fe6c4032fc011c9f28994e5047))
 
 - `composer req form`
+
+## Add CRUD With Pagination and Form ([91a87b1](https://github.com/ad3n/SymfonyBlog/commit/91a87b1ba66793fe6c4032fc011c9f28994e5047))
+
+- Fix bug (missing) pagination link in list tamplate (`list.html.twig`)
