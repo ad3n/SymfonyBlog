@@ -20,7 +20,7 @@
 
 ## Prepare Pagination ([5ca45c8](https://github.com/ad3n/SymfonyBlog/commit/5ca45c8e16e23d64901fcd0d1d861efac62cad5a))
 
-- repo: https://github.com/KnpLabs/KnpPaginatorBundle
+- repo: [https://github.com/KnpLabs/KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle)
 
 - `composer require knplabs/knp-paginator-bundle`
 
@@ -39,3 +39,9 @@
 - `composer req validation`
 
 ## Add Unique Name Validation ([efe2a6c](https://github.com/ad3n/SymfonyBlog/commit/efe2a6c7a9e4680c19d78ac35fb198b293ce1858))
+
+## Prepare Datatables ([871355a](https://github.com/ad3n/SymfonyBlog/commit/871355a5e142ddcf2db6f7f5c9bca61cce54dcbc))
+
+- repo: [https://github.com/omines/datatables-bundle](https://github.com/omines/datatables-bundle)
+
+- `composer require omines/datatables-bundle`
