@@ -18,3 +18,6 @@
 
 ## Add CRUD Without Pagination and Form ([5ca45c8](https://github.com/ad3n/SymfonyBlog/commit/5ca45c8e16e23d64901fcd0d1d861efac62cad5a))
 
+## Prepare Pagination ([5ca45c8](https://github.com/ad3n/SymfonyBlog/commit/5ca45c8e16e23d64901fcd0d1d861efac62cad5a))
+
+- `composer require knplabs/knp-paginator-bundle`
