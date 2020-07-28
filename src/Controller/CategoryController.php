@@ -31,13 +31,14 @@ class CategoryController extends AbstractController
         $form = $this->createForm(CategoryType::class, $category);
         if ($request->isMethod(Request::METHOD_POST)) {
             $form->handleRequest($request);
+            if ($form->isValid()) {
+                $manager->persist($category);
+                $manager->flush();
 
-            $manager->persist($category);
-            $manager->flush();
+                $this->addFlash('info', 'Category has been save');
 
-            $this->addFlash('info', 'Category has been save');
-
-            return new RedirectResponse($urlGenerator->generate('app_category_index'));
+                return new RedirectResponse($urlGenerator->generate('app_category_index'));
+            }
         }
 
         return $this->render('category/add.html.twig', ['form' => $form->createView()]);
@@ -56,13 +57,14 @@ class CategoryController extends AbstractController
         $form = $this->createForm(CategoryType::class, $category);
         if ($category && $request->isMethod(Request::METHOD_POST)) {
             $form->handleRequest($request);
+            if ($form->isValid()) {
+                $manager->persist($category);
+                $manager->flush();
 
-            $manager->persist($category);
-            $manager->flush();
+                $this->addFlash('info', 'Category has been update');
 
-            $this->addFlash('info', 'Category has been update');
-
-            return new RedirectResponse($urlGenerator->generate('app_category_index'));
+                return new RedirectResponse($urlGenerator->generate('app_category_index'));
+            }
         }
 
         return $this->render('category/edit.html.twig', ['id' => $id, 'form' => $form->createView()]);
