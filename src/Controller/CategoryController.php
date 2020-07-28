@@ -16,9 +16,9 @@ class CategoryController extends AbstractController
     /**
      * @Route("/category/list", methods={"GET"})
      */
-    public function index(CategoryRepository $repository)
+    public function index(CategoryRepository $repository, Request $request)
     {
-        return $this->render('category/list.html.twig', ['categories' => $repository->findAll()]);
+        return $this->render('category/list.html.twig', ['pagination' => $repository->paginate($request->get('page', 1), 2)]);
     }
 
     /**

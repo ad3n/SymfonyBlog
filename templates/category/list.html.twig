@@ -7,14 +7,14 @@
 <table style="border: 1px solid #acacac">
     <thead>
         <tr>
-            <td style="border: 1px solid #acacac">ID</td>
-            <td style="border: 1px solid #acacac">Name</td>
+            <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</td>
+            <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Name', 'o.name') }}</td>
             <td style="border: 1px solid #acacac">URL</td>
             <td style="border: 1px solid #acacac">Action</td>
         </tr>
     </thead>
     <tbody>
-    {% for category in categories %}
+    {% for category in pagination %}
         <tr>
             <td style="border: 1px solid #acacac">{{ category.id }}</td>
             <td style="border: 1px solid #acacac">{{ category.name }}</td>
