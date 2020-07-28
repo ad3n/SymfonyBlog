@@ -1,0 +1,27 @@
+{% for message in app.flashes('info') %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <p>{{ message }}</p>
+{% endfor %}
+<table style="border: 1px solid #acacac">
+    <thead>
+        <tr>
+            <td style="border: 1px solid #acacac">ID</td>
+            <td style="border: 1px solid #acacac">Name</td>
+            <td style="border: 1px solid #acacac">URL</td>
+            <td style="border: 1px solid #acacac">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% for category in categories %}
+        <tr>
+            <td style="border: 1px solid #acacac">{{ category.id }}</td>
+            <td style="border: 1px solid #acacac">{{ category.name }}</td>
+            <td style="border: 1px solid #acacac">{{ category.slug }}</td>
+            <td style="border: 1px solid #acacac"><a href="{{ path('app_category_edit', {id: category.id}) }}" >Edit</a> <=> <a href="{{ path('app_category_delete', {id: category.id}) }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p><a href="{{ path('app_category_add') }}">Add</a></p>

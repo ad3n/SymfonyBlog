@@ -10,3 +10,11 @@
 
 - `php bin/console make:entity`
 
+## Create Database and Update Schema
+
+- `php bin/console doctrine:database:create`
+
+- `php bin/console doctrine:schema:update --force`
+
+## Add CRUD Without Pagination and Form
+
