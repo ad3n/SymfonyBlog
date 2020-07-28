@@ -44,4 +44,4 @@
 
 - repo: [https://github.com/omines/datatables-bundle](https://github.com/omines/datatables-bundle)
 
-- `composer require omines/datatables-bundle`
+- `composer require omines/datatables-bundle asset`
