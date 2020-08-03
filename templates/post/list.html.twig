@@ -18,7 +18,7 @@
     {% for post in pagination %}
         <tr>
             <td style="border: 1px solid #acacac">{{ post.id }}</td>
-            <td style="border: 1px solid #acacac">{{ post.name }}</td>
+            <td style="border: 1px solid #acacac">{{ post.title }}</td>
             <td style="border: 1px solid #acacac">{{ post.category.name }}</td>
             <td style="border: 1px solid #acacac">{{ post.slug }}</td>
             <td style="border: 1px solid #acacac"><a href="{{ path('app_post_edit', {id: post.id}) }}" >Edit</a> <=> <a href="{{ path('app_post_delete', {id: post.id}) }}">Delete</a></td>
