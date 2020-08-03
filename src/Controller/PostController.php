@@ -47,9 +47,27 @@ class PostController extends AbstractController
     /**
      * @Route("/post/{id}/edit", methods={"GET", "POST"}, requirements={"id"="\d+"})
      */
-    public function edit(int $id, Request $request)
+    public function edit(int $id, Request $request, PostRepository $repository, EntityManagerInterface $manager, UrlGeneratorInterface $urlGenerator)
     {
+        $post = $repository->find($id);
+        if (!$post) {
+            $this->addFlash('error', 'Post not found');
+        }
 
+        $form = $this->createForm(PostType::class, $post);
+        if ($post && $request->isMethod(Request::METHOD_POST)) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $manager->persist($post);
+                $manager->flush();
+
+                $this->addFlash('info', 'Post has been update');
+
+                return new RedirectResponse($urlGenerator->generate('app_post_index'));
+            }
+        }
+
+        return $this->render('post/edit.html.twig', ['id' => $id, 'form' => $form->createView()]);
     }
 
     /**
