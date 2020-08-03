@@ -6,9 +6,6 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
-use Omines\DataTablesBundle\Column\TextColumn;
-use Omines\DataTablesBundle\DataTableFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,23 +17,9 @@ class CategoryController extends AbstractController
     /**
      * @Route("/category/list", methods={"GET"})
      */
-    public function index(DataTableFactory $dataTableFactory, Request $request)
+    public function index(CategoryRepository $repository, Request $request)
     {
-        $table = $dataTableFactory->create()
-            ->add('id', TextColumn::class, ['label' => 'ID'])
-            ->add('name', TextColumn::class, ['label' => 'Name'])
-            ->add('slug', TextColumn::class, ['label' => 'Url'])
-            ->createAdapter(ORMAdapter::class, [
-                'entity' => Category::class,
-            ])
-            ->handleRequest($request)
-        ;
-
-        if ($table->isCallback()) {
-            return $table->getResponse();
-        }
-
-        return $this->render('category/list.html.twig', ['datatable' => $table]);
+        return $this->render('category/list.html.twig', ['pagination' => $repository->paginate($request->get('page', 1), 2)]);
     }
 
     /**
