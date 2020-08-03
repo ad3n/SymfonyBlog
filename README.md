@@ -83,3 +83,5 @@
 ## Implement Summer Note to Post Content ([1c5f6e3](https://github.com/ad3n/SymfonyBlog/commit/1c5f6e3fa245740da2491c8dedf094f92584d1b8))
 
 - Fix Missing jQuery
+
+## Implement Entry Point ([b31eac9](https://github.com/ad3n/SymfonyBlog/commit/b31eac9bc35c5ca68f9482a0f6ce5cc5b3bdf2ef))
