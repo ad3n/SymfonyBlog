@@ -1,0 +1,32 @@
+{% for message in app.flashes('info') %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <p>{{ message }}</p>
+{% endfor %}
+<table style="border: 1px solid #acacac">
+    <thead>
+    <tr>
+        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</td>
+        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Title', 'o.title') }}</td>
+        <td style="border: 1px solid #acacac">URL</td>
+        <td style="border: 1px solid #acacac">Category</td>
+        <td style="border: 1px solid #acacac">Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for post in pagination %}
+        <tr>
+            <td style="border: 1px solid #acacac">{{ post.id }}</td>
+            <td style="border: 1px solid #acacac">{{ post.name }}</td>
+            <td style="border: 1px solid #acacac">{{ post.category.name }}</td>
+            <td style="border: 1px solid #acacac">{{ post.slug }}</td>
+            <td style="border: 1px solid #acacac"><a href="{{ path('app_post_edit', {id: post.id}) }}" >Edit</a> <=> <a href="{{ path('app_post_delete', {id: post.id}) }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{{ knp_pagination_render(pagination) }}
+
+<p><a href="{{ path('app_post_add') }}">Add</a></p>
