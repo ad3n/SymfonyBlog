@@ -19,7 +19,7 @@ class CategoryController extends AbstractController
      */
     public function index(CategoryRepository $repository, Request $request)
     {
-        return $this->render('category/list.html.twig', ['pagination' => $repository->paginate($request->get('page', 1), 2)]);
+        return $this->render('category/list.html.twig', ['pagination' => $repository->paginate($request->get('page', 1), 10)]);
     }
 
     /**
