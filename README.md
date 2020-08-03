@@ -71,3 +71,15 @@
 ## Implement Post edit action ([78241cd](https://github.com/ad3n/SymfonyBlog/commit/78241cdae4ad02fc86027a05ad99698608465447))
 
 ## Implement Post delete action ([1a552b7](https://github.com/ad3n/SymfonyBlog/commit/1a552b7f831acf7a8eb52e3aad3c994dab07ff48))
+
+## Implement Bootstrap in Category List ([65924ff](https://github.com/ad3n/SymfonyBlog/commit/65924ff3506f1c40ea637ef0523099564683b900))
+
+## Use Bootstrap v4 as form theme ([12859e9](https://github.com/ad3n/SymfonyBlog/commit/12859e99a2c2077975e6539c3edd608a43a087a4))
+
+## Apply Bootstrap to Add and Edit Category ([34d22e8](https://github.com/ad3n/SymfonyBlog/commit/34d22e8e999ff4249e98df3a0377a56e1eb9d4aa))
+
+## Apply Bootstrap to Post ([da17858](https://github.com/ad3n/SymfonyBlog/commit/da17858666a9fe9ff8d1569170eb326bdfb92a0e))
+
+## Implement Summer Note to Post Content ([1c5f6e3](https://github.com/ad3n/SymfonyBlog/commit/1c5f6e3fa245740da2491c8dedf094f92584d1b8))
+
+- Fix Missing jQuery
