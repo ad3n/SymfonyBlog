@@ -73,8 +73,18 @@ class PostController extends AbstractController
     /**
      * @Route("/post/{id}/delete", methods={"GET"}, requirements={"id"="\d+"})
      */
-    public function delete(int $id, Request $request)
+    public function delete(int $id, PostRepository $repository, EntityManagerInterface $manager, UrlGeneratorInterface $urlGenerator)
     {
+        $post = $repository->find($id);
+        if (!$post) {
+            $this->addFlash('error', 'Post not found');
+        } else {
+            $manager->remove($post);
+            $manager->flush();
 
+            $this->addFlash('info', 'Post has been delete');
+        }
+
+        return new RedirectResponse($urlGenerator->generate('app_post_index'));
     }
 }
