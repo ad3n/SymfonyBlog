@@ -1,30 +1,43 @@
-{% for message in app.flashes('info') %}
-    <p>{{ message }}</p>
-{% endfor %}
-{% for message in app.flashes('error') %}
-    <p>{{ message }}</p>
-{% endfor %}
-<table style="border: 1px solid #acacac">
-    <thead>
-    <tr>
-        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</td>
-        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Name', 'o.name') }}</td>
-        <td style="border: 1px solid #acacac">URL</td>
-        <td style="border: 1px solid #acacac">Action</td>
-    </tr>
-    </thead>
-    <tbody>
-    {% for category in pagination %}
-        <tr>
-            <td style="border: 1px solid #acacac">{{ category.id }}</td>
-            <td style="border: 1px solid #acacac">{{ category.name }}</td>
-            <td style="border: 1px solid #acacac">{{ category.slug }}</td>
-            <td style="border: 1px solid #acacac"><a href="{{ path('app_category_edit', {id: category.id}) }}" >Edit</a> <=> <a href="{{ path('app_category_delete', {id: category.id}) }}">Delete</a></td>
-        </tr>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Category List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+    {% for message in app.flashes('info') %}
+        <p>{{ message }}</p>
     {% endfor %}
-    </tbody>
-</table>
-
-{{ knp_pagination_render(pagination) }}
-
-<p><a href="{{ path('app_category_add') }}">Add</a></p>
+    {% for message in app.flashes('error') %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</th>
+            <th style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Name', 'o.name') }}</th>
+            <th style="border: 1px solid #acacac">URL</th>
+            <th style="border: 1px solid #acacac">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in pagination %}
+            <tr>
+                <td style="border: 1px solid #acacac">{{ category.id }}</td>
+                <td style="border: 1px solid #acacac">{{ category.name }}</td>
+                <td style="border: 1px solid #acacac">{{ category.slug }}</td>
+                <td style="border: 1px solid #acacac">
+                    <a class="btn btn-sm btn-warning" href="{{ path('app_category_edit', {id: category.id}) }}" >Edit</a>
+                    <a class="btn btn-sm btn-danger ml-1" href="{{ path('app_category_delete', {id: category.id}) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ knp_pagination_render(pagination) }}
+    <p class="ml-3"><a class="btn btn-primary" href="{{ path('app_category_add') }}">Add</a></p>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

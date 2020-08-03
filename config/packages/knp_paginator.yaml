@@ -1,0 +1,6 @@
+knp_paginator:
+    page_range: 3
+    template:
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'
+        sortable: '@KnpPaginator/Pagination/twitter_bootstrap_v4_font_awesome_sortable_link.html.twig'
+        filtration: '@KnpPaginator/Pagination/twitter_bootstrap_v4_filtration.html.twig'
