@@ -47,3 +47,27 @@
 - `composer require omines/datatables-bundle asset`
 
 ## Add List Datatables ([8e06ba3](https://github.com/ad3n/SymfonyBlog/commit/8e06ba335034fe91981104e89728a5471472e78b))
+
+## Add Post Form ([6132a1e](https://github.com/ad3n/SymfonyBlog/commit/6132a1e8f62a50d51e542f67b5843d4f62d58844))
+
+## Change datatables to traditional table ([52f8593](https://github.com/ad3n/SymfonyBlog/commit/52f8593cd7e00416fe5289098f8ca942ea02aa98))
+
+## Create PostController ([551ff06](https://github.com/ad3n/SymfonyBlog/commit/551ff06f42cc24bfb7ba38d9397e5fa2e4625f68))
+
+- Fix per page (limit)
+
+## Implement List and Prepare all action (add, edit and delete) ([e0e8b21](https://github.com/ad3n/SymfonyBlog/commit/e0e8b2127bf5ec6f6e50d5f010913107354dd5b7))
+
+## Prepare Post add action ([501a9c9](https://github.com/ad3n/SymfonyBlog/commit/501a9c93c1bb43f3ecb9998c06ade3fb9576dea4))
+
+## Fix "Catchable Fatal Error: **Object of class App\Entity\Category could not be converted to string**" ([1871a3c](https://github.com/ad3n/SymfonyBlog/commit/1871a3c218224bfc3d9d589f69fe59c83c2142ea))
+
+## Implement Post add action ([7291e4e](https://github.com/ad3n/SymfonyBlog/commit/7291e4e441d6800c90a901885e2b2e8c2e8e50ea))
+
+- Fix wrong property in list
+
+- Fix wrong property order in list
+
+## Implement Post edit action ([78241cd](https://github.com/ad3n/SymfonyBlog/commit/78241cdae4ad02fc86027a05ad99698608465447))
+
+## Implement Post delete action ([1a552b7](https://github.com/ad3n/SymfonyBlog/commit/1a552b7f831acf7a8eb52e3aad3c994dab07ff48))
