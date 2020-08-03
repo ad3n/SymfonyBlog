@@ -1,17 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
 {% for message in app.flashes('info') %}
     <p>{{ message }}</p>
 {% endfor %}
 {% for message in app.flashes('error') %}
     <p>{{ message }}</p>
 {% endfor %}
-<table style="border: 1px solid #acacac">
-    <thead>
+<table class="table table-bordered">
+    <thead class="thead-dark">
     <tr>
-        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</td>
-        <td style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Title', 'o.title') }}</td>
-        <td style="border: 1px solid #acacac">URL</td>
-        <td style="border: 1px solid #acacac">Category</td>
-        <td style="border: 1px solid #acacac">Action</td>
+        <th style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'ID', 'o.id') }}</th>
+        <th style="border: 1px solid #acacac">{{ knp_pagination_sortable(pagination, 'Title', 'o.title') }}</th>
+        <th style="border: 1px solid #acacac">URL</th>
+        <th style="border: 1px solid #acacac">Category</th>
+        <th style="border: 1px solid #acacac">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -21,7 +30,10 @@
             <td style="border: 1px solid #acacac">{{ post.title }}</td>
             <td style="border: 1px solid #acacac">{{ post.slug }}</td>
             <td style="border: 1px solid #acacac">{{ post.category.name }}</td>
-            <td style="border: 1px solid #acacac"><a href="{{ path('app_post_edit', {id: post.id}) }}" >Edit</a> <=> <a href="{{ path('app_post_delete', {id: post.id}) }}">Delete</a></td>
+            <td style="border: 1px solid #acacac">
+                <a class="btn btn-sm btn-warning" href="{{ path('app_post_edit', {id: post.id}) }}" >Edit</a>
+                <a class="btn btn-sm btn-danger ml-1" href="{{ path('app_post_delete', {id: post.id}) }}">Delete</a>
+            </td>
         </tr>
     {% endfor %}
     </tbody>
@@ -29,4 +41,8 @@
 
 {{ knp_pagination_render(pagination) }}
 
-<p><a href="{{ path('app_post_add') }}">Add</a></p>
+<p class="ml-3"><a class="btn btn-primary" href="{{ path('app_post_add') }}">Add</a></p>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
